@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="sideBarStatus" style="height: 95vh;" class="col-lg-1 bg-dark d-flex flex-column p-3">
+            <a class="mb-3 fw-bolder" style="text-decoration: none; color: white; " routerLink="/">Home</a>
+            <a class="mb-3 fw-bolder" style="text-decoration: none; color: white; " routerLink="/users">Users</a>
+
+            <button (click)="logout()" class="btn text-light mt-auto fw-bolder">Logout</button>
+
+        </div>
+        <div class="col">
+            <div class="row mt-2">
+                <div class="col-lg-8">
+                    <div style="height: 140px;background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/405/677/small/colorful-abstract-geometric-background-design-modern-curve-liquid-color-with-fluid-shapes-composition-cool-background-for-web-landing-template-poster-or-banner-illustration-free-vector.jpg');background-size: cover;" class="d-flex banner rounded p-3 align-items-center shadow">
+                        <h1> <i (click)="menuBtnClicked()" class=" fa-solid fa-bars btn text-dark fa-1x"></i>Welcome {{adminName}}</h1>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-lg-6">
+                            <app-calender></app-calender>
+                        </div>
+                        <div class="col-lg-6">
+                            <app-chart></app-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="height: 500px;" class="rounded p-2 border shadow">
+                        <app-edit-admin (onAdminChange)="adminChange($event)" ></app-edit-admin>
+                    </div>
+                    <div style="height: 130px;background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/405/677/small/colorful-abstract-geometric-background-design-modern-curve-liquid-color-with-fluid-shapes-composition-cool-background-for-web-landing-template-poster-or-banner-illustration-free-vector.jpg');background-size: cover;" class="d-flex banner rounded p-3 align-items-center shadow mt-2">
+                        <h4> <i class=" fa-solid fa-users btn text-dark fa-1x"></i>Total Employees: <span class="fa-solid text-dark">{{userCount}}</span> </h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
