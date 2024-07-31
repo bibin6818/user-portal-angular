@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AdminService {
-serverUrl = "https://user-portal-server-angular-gn3z.onrender.com"
+serverUrl = "https://user-portal-server-angular-1.onrender.com"
   constructor(private http:HttpClient,private router:Router) { }
   loginAPI(email:any,password:any){
     //api call
